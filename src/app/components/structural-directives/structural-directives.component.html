@@ -1,0 +1,71 @@
+<p>structural-directives works!</p>
+<!-- Directives are used to change DOM layout, appearance and behaviour. -->
+<!-- 1. structural directives -->
+<!-- 2. Attribute directives -->
+<!-- <p>2. Attribute directives works!</p> -->
+<!-- *ngIf -->
+<!-- *ngFor -->
+<!-- *ngSwitch -->
+
+<!-- 2. Attribute directives are used to change the DOM appearance -->
+<!-- 1. ngClass -->
+<!-- 2. ngStyle -->
+<!-- 3. ngModel -->
+<!-- -->
+
+<h1>Structural Directives</h1>
+
+<!-- <div *ngIf="firstName"> User is {{firstName}}</div> -->
+
+
+<!-- @if(firstName){
+    <p>This is true </p>
+}
+@else{
+    <p>This is False</p>
+} -->
+
+<div *ngFor="let p of player"> Player Name is {{p}}</div>
+
+<!-- <div>   
+    @for (p of player; track p) {
+        <p>Player Selected {{p}}</p>
+    }
+
+</div> -->
+
+
+<!-- <div [ngSwitch]="playerName">
+    <div *ngSwitchCase="'Dhoni'">Dhoni Selected</div>
+    <div *ngSwitchCase="'Sachin'">Sachin Selected</div>
+    <div *ngSwitchCase="'Rohit'">Rohit Selected</div>
+    <div *ngSwitchCase="'Virat'">Virat Selected</div>
+</div> -->
+
+<div [ngSwitch]="playerName">
+    <div *ngFor="let p of player">
+    
+        <div *ngSwitchCase="p">{{p}} Selected</div>
+        
+    </div>
+    <div *ngSwitchDefault> No Player Selected</div>
+</div>
+
+<hr>
+<h1>Attribute Directives</h1>
+<p><b>1.ngClass Attribute</b></p>
+
+<div [ngClass]="showvalue ? myclass : changecolor">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div><br>
+
+<button (click)="onchange()">Change Color</button>
+
+<hr>
+<p><b>2.ngStyle Attribute</b></p>
+<div [ngStyle]="showvalue ? myActivestyle :myDisablestyle ">This is custom Style</div>
+<hr>
+<p><b>3.ngModel Attribute</b></p>
+<input [(ngModel)]="playerName">
+<input value="Virat">
+<hr>
+<h1>Custom Directives</h1>
+<!-- <div appColordirective>This is custom directives</div> -->

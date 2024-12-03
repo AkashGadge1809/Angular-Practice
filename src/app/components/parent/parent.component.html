@@ -1,0 +1,11 @@
+<p>parent works!</p>
+<div>{{ firstName }}</div>
+<input type="text" [(ngModel)]="inputvalue" placeholder="Enter Any value"><br>
+<button class="btn btn-primary" (click)="sendvalutToChild()">Primary Button</button>
+<div>User Is {{Username}}</div>
+
+<app-child
+ [username]="value"
+ [arr]="arr"
+ (sendvaluetoParent)="datafromChild($event) "
+ ></app-child>
