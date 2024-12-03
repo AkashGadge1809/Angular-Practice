@@ -6,7 +6,7 @@ import { ColordirectiveDirective } from 'src/app/directives/colordirective.direc
 @Component({
   selector: 'app-structural-directives',
   standalone: true,
-  imports: [CommonModule, FormsModule, ColordirectiveDirective],
+  imports: [CommonModule, ],
   templateUrl:'./structural-directives.component.html',
   styleUrls: ['./structural-directives.component.css']
 })
