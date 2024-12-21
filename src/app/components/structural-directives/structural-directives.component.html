@@ -18,12 +18,12 @@
 <!-- <div *ngIf="firstName"> User is {{firstName}}</div> -->
 
 
-<!-- @if(firstName){
+@if(showvalue){
     <p>This is true </p>
 }
 @else{
     <p>This is False</p>
-} -->
+}
 
 <div *ngFor="let p of player"> Player Name is {{p}}</div>
 
@@ -64,8 +64,9 @@
 <div [ngStyle]="showvalue ? myActivestyle :myDisablestyle ">This is custom Style</div>
 <hr>
 <p><b>3.ngModel Attribute</b></p>
-<input [(ngModel)]="playerName">
+<!-- <input [(ngModel)]="playerName"> -->
+ <input [(ngModel)]="playerName">
 <input value="Virat">
 <hr>
 <h1>Custom Directives</h1>
-<!-- <div appColordirective>This is custom directives</div> -->
+<div appColordirective>This is custom directives</div>

@@ -4,11 +4,11 @@ import { StructuralDirectivesComponent } from "../structural-directives/structur
 import { SquarePipe } from 'src/app/pipe/square.pipe';
 
 @Component({
-  selector: 'app-pipes',
-  standalone: true,
-  imports: [CommonModule, StructuralDirectivesComponent,SquarePipe],
-  templateUrl: './pipes.component.html',
-  styleUrls: ['./pipes.component.css']
+    selector: 'app-pipes',
+    standalone:true,
+    imports: [CommonModule, SquarePipe],
+    templateUrl: './pipes.component.html',
+    styleUrls: ['./pipes.component.css']
 })
 export class PipesComponent {
 firstName='Akash'

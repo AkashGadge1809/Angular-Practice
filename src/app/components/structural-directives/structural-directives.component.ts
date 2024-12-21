@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { ColordirectiveDirective } from 'src/app/directives/colordirective.directive';
 
 @Component({
-  selector: 'app-structural-directives',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl:'./structural-directives.component.html',
-  styleUrls: ['./structural-directives.component.css']
+    selector: 'app-structural-directives',
+    standalone: true,
+    imports: [CommonModule, FormsModule, ColordirectiveDirective],
+    templateUrl: './structural-directives.component.html',
+    styleUrls: ['./structural-directives.component.css']
 })
 export class StructuralDirectivesComponent {
 
   firstName='Akash'
   showvalue=true
   player:string[]=['Sachin','Dhoni','Virat','Rohit']
-  playerName='Dhoni'
+  playerName=''
 
   myclass={
     heading:this.showvalue,// What if we dont provide any value to heading
