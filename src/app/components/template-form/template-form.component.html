@@ -1,1 +1,19 @@
-<p>template-form works!</p>
+<form class="m-3" #myform="ngForm" (ngSubmit)="onSubmit(myform.value)" > 
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input  class="form-control" type="email" id="email" name="email" [(ngModel)]="form.email" #email="ngModel"  required >
+      
+    </div>
+    <div class="text-danger" *ngIf="email.errors?.['required']">Please Enter Valid Email </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="text" class="form-control" id="password" name="password" [(ngModel)]="form.password" #password="ngModel" maxlength="10" minlength="4" >
+    </div>
+    <div class="text-danger" *ngIf="password.errors?.['maxlength']">Please Enter Password of length 10</div>
+    <div class="text-danger" *ngIf="password.errors?.['minlength']">Please Enter Password more than 4 length</div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="myform.invalid">Submit</button>
+  </form>
+  <div *ngIf="isSubmitted" class="text-success">Form Submitted Succesfully </div>

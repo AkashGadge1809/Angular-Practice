@@ -12,15 +12,22 @@ import { FormComponent } from './components/form/form.component';
 export const routes: Routes = [
 
     {  path: '', component:AppComponent },
+
     {  path:'Directives', component: StructuralDirectivesComponent },
+
     {  path:'Pipes', component:PipesComponent },
+
     {  path:'Child', component:ChildComponent }, 
+
     {  path:'Parent', component:ParentComponent },
-    // {  path:'Child', redirectTo:'Directives'},
+
+    {  path:'Child', redirectTo:'Directives'},
     {  path:'form',component:FormComponent, children:[
         {path:'template', component:TemplateFormComponent},
         {path:'reactive', component:ReactiveFormComponent}
     ]},
+
+    // {   path:'form/:id', component:FormComponent},
     {  path:'**', component:PagenotFoundComponent}
 
 ];
