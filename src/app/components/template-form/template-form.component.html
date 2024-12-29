@@ -1,5 +1,5 @@
 <form class="m-3" #myform="ngForm" (ngSubmit)="onSubmit(myform.value)" > 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input  class="form-control" type="email" id="email" name="email" [(ngModel)]="form.email" #email="ngModel"  required >
       
@@ -10,10 +10,26 @@
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="text" class="form-control" id="password" name="password" [(ngModel)]="form.password" #password="ngModel" maxlength="10" minlength="4" >
     </div>
+   
     <div class="text-danger" *ngIf="password.errors?.['maxlength']">Please Enter Password of length 10</div>
-    <div class="text-danger" *ngIf="password.errors?.['minlength']">Please Enter Password more than 4 length</div>
+    <div class="text-danger" *ngIf="password.errors?.['minlength']">Please Enter Password more than 4 length</div> -->
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input  class="form-control" type="text" id="name" name="name" [(ngModel)]="form.name" #fname="ngModel"  required >
+      
+    </div>
+<!-- Validation -->
+
+    <div *ngIf="fname.invalid" class="text-danger"> First Nane is invalid</div>
+    <div *ngIf="fname.valid" class="text-danger"> First Nane is valid</div>
+    <div *ngIf="fname.touched" class="text-danger"> First Nane is touched</div>
+    <div *ngIf="fname.untouched" class="text-danger"> First Nane is untouched</div>
+    <div *ngIf="fname.dirty" class="text-danger"> First Nane is Dirty</div>
+    <div *ngIf="fname.pristine" class="text-danger"> First Nane is pristine</div>
+
 
 
     <button type="submit" class="btn btn-primary" [disabled]="myform.invalid">Submit</button>
   </form>
-  <div *ngIf="isSubmitted" class="text-success">Form Submitted Succesfully </div>
+  <div *ngIf="isSubmitted" class="alert alert-success">Form Submitted Succesfully </div>

@@ -1,1 +1,27 @@
-<p>reactive-form works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="m-3 container-sm w-50 ">
+    
+    <div class="mb-3">
+      <label for="UserName" class="form-label">UserName</label>
+      <input type="text" class="form-control" id="email" formControlName="fname" required>
+    </div>
+    <!-- First Way to Add Validation in reactive Template Form -->
+    <div class="text-danger" *ngIf="myForm.controls['fname'].invalid && myForm.controls['fname'].touched"> First Name is required </div>
+
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="email" formControlName="email" required >
+    </div>
+    <!-- Second Way to Add Validation in Reactive Template Form -->
+  <div class="text-danger" *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"> Email Is required </div>
+
+
+  <div class="mb-3">
+    <label for="MobNo" class="form-label">Mobile No:</label>
+    <input type="text" class="form-control" id="MobNo" formControlName="mobNo" maxlength="10" required >
+  </div>
+  
+<div class="text-danger" *ngIf="myForm.get('mobNo')?.invalid && myForm.get('mobNo')?.touched"> mobNo Is required </div>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+</form>
+<div class="alert alert-success w-50" *ngIf="isSubmitted"> Form Submitted SuccessFully </div>

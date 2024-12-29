@@ -10,6 +10,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
   constructor(private router:Router){}
+  
   user={fname :'Akash',Lname:'Gadge'}
   
   navtoForm()

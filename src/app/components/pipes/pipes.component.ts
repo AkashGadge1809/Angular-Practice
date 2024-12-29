@@ -13,4 +13,11 @@ import { SquarePipe } from 'src/app/pipe/square.pipe';
 export class PipesComponent {
 firstName='Akash'
 date="12/10/2024"
+greetingFunction()
+{
+    console.log("Hello From Child Component")    
 }
+
+}
+
+

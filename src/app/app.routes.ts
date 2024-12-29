@@ -8,6 +8,8 @@ import { TemplateFormComponent } from './components/template-form/template-form.
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { PagenotFoundComponent } from './components/pagenot-found/pagenot-found.component';
 import { FormComponent } from './components/form/form.component';
+import { ViewChildComponent } from './components/view-child/view-child.component';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 export const routes: Routes = [
 
@@ -26,7 +28,9 @@ export const routes: Routes = [
         {path:'template', component:TemplateFormComponent},
         {path:'reactive', component:ReactiveFormComponent}
     ]},
-
+    
+    { path:'viewchild', component: ViewChildComponent},
+    { path:'user', component: UserDataComponent},
     // {   path:'form/:id', component:FormComponent},
     {  path:'**', component:PagenotFoundComponent}
 

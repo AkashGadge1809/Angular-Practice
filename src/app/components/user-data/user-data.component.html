@@ -1,0 +1,32 @@
+<p>user-data works!</p>
+<button class="btn btn-primary m-3 "  (click)="userData()"> User Data </button>
+<button class="btn btn-warning m-3 "  (click)="getdynamicData()"> Dynamic Data </button>
+<button class="btn btn-success m-3 " (click)="getServerData()">User List From Server</button>
+
+<div *ngIf="data">
+    <h3>Static Data</h3>
+    <div *ngFor="let d of data">
+        Id :{{d.id}}
+        Name: {{d.name}} 
+        Age : {{d.age}}
+    </div>
+</div>
+
+<div *ngIf="dynamicdata">
+    <h3>Dyanamic List</h3>
+    {{dynamicdata?.ability}}
+    {{dynamicdata?.name}}
+    {{dynamicdata?.type}}
+    {{dynamicdata?.base_experience}}
+    {{dynamicdata?.height}}
+    {{dynamicdata?.weight}}
+</div>
+
+
+<div  *ngIf="serverdata">
+    <h1 > User List </h1>
+<ul>
+   
+    <li *ngFor="let sd of serverdata">{{sd.name}}</li>
+</ul>
+</div>
