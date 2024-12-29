@@ -10,10 +10,12 @@ import { PagenotFoundComponent } from './components/pagenot-found/pagenot-found.
 import { FormComponent } from './components/form/form.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
 import { UserDataComponent } from './components/user-data/user-data.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CRUDComponent } from './components/crud/crud.component';
 
 export const routes: Routes = [
 
-    {  path: '', component:AppComponent },
+    {  path: '', component:NavbarComponent },
 
     {  path:'Directives', component: StructuralDirectivesComponent },
 
@@ -30,7 +32,12 @@ export const routes: Routes = [
     ]},
     
     { path:'viewchild', component: ViewChildComponent},
+    
     { path:'user', component: UserDataComponent},
+
+    { path:'crud', component: CRUDComponent},
+
+
     // {   path:'form/:id', component:FormComponent},
     {  path:'**', component:PagenotFoundComponent}
 

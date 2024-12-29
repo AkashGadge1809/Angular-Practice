@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center align-items-center ">
+    <form #myform="ngForm" (ngSubmit)="SavaUser()" class="container-sm m-3 w-50" >
+
+        <div>
+            <label for="Fname" class="form-label">Enter Name</label>
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="curruser.name" required>
+        </div>
+
+        <div>
+            <label for="Fname" class="form-label">Enter Age</label>
+            <input type="text" name="age" id="age" class="form-control" [(ngModel)]="curruser.age" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary m-2">Save</button>
+           
+    </form>
+</div>
+
+
+<div class="d-flex justify-content-center align-items-center ">
+<table class="table table-sm table-striped w-50 ">
+    <thead >
+        <tr class="table-success">
+            <th>Id </th>
+            <th>Name </th>
+            <th>Age </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let data of UserData">
+        <td>{{data.id }}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td>
+            <button class="btn btn-danger m-2" (click)="DeleteUser(data.id)">Delete</button>
+            <button class="btn btn-primary m-2" (click)="updateUser(data)">Edit</button>
+        </td>
+       </tr>
+    </tbody>
+
+</table>
+</div>

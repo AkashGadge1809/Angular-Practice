@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { DynamicService } from 'src/app/Services/dynamic.service';
 import { UserServiceService } from 'src/app/Services/user-service.service';
@@ -6,7 +7,7 @@ import { UserServiceService } from 'src/app/Services/user-service.service';
 @Component({
   selector: 'app-user-data',
   standalone:true,
-  imports: [CommonModule ],
+  imports: [CommonModule, HttpClientModule ],
   templateUrl: './user-data.component.html',
   styleUrl: './user-data.component.css'
 })
@@ -36,10 +37,9 @@ export class UserDataComponent {
 // From db.json Server
   getServerData(){
     this.user1.getServerData().subscribe((userdata)=>{
-
       this.serverdata=userdata;
-
     })
   }
+  
 
 }
