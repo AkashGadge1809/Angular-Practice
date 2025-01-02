@@ -12,10 +12,11 @@ import { ViewChildComponent } from './components/view-child/view-child.component
 import { UserDataComponent } from './components/user-data/user-data.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CRUDComponent } from './components/crud/crud.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 export const routes: Routes = [
 
-    {  path: '', component:NavbarComponent },
+    {  path: '', redirectTo: '/Directives', pathMatch: 'full' },
 
     {  path:'Directives', component: StructuralDirectivesComponent },
 
@@ -36,6 +37,8 @@ export const routes: Routes = [
     { path:'user', component: UserDataComponent},
 
     { path:'crud', component: CRUDComponent},
+
+    { path:'pagination', component: PaginationComponent},
 
 
     // {   path:'form/:id', component:FormComponent},

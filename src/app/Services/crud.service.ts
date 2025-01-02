@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
-})
+})  
 export class CrudService {
 
   constructor(private http : HttpClient) { }
@@ -12,7 +12,7 @@ export class CrudService {
   private UserURL='http://localhost:3000/users';
 
 
-  getUserData():Observable<any>  
+    getUserData():Observable<any>  
   {
     return this.http.get(this.UserURL);
   }
